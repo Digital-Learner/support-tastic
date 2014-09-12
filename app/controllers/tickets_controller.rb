@@ -4,6 +4,7 @@ class TicketsController < ApplicationController
 
   def new
     @ticket = Ticket.new
+    @departments = Department.all
   end
 
   def create
@@ -18,6 +19,6 @@ class TicketsController < ApplicationController
   private
 
     def ticket_params
-      params.require(:ticket).permit(:name, :email, :subject, :detail)
+      params.require(:ticket).permit(:name, :email, :subject, :detail, :department_id)
     end
 end

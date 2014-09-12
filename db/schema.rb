@@ -11,10 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140912134321) do
+ActiveRecord::Schema.define(version: 20140912141928) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "departments", force: true do |t|
+    t.string "name"
+  end
 
   create_table "tickets", force: true do |t|
     t.string   "name"
@@ -23,6 +27,9 @@ ActiveRecord::Schema.define(version: 20140912134321) do
     t.string   "detail"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "department_id"
   end
+
+  add_index "tickets", ["department_id"], name: "index_tickets_on_department_id", using: :btree
 
 end

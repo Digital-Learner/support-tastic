@@ -1,12 +1,29 @@
 <%= form_for @ticket do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name, placeholder: "Your name" %>
-  <%= f.label :email %>
-  <%= f.text_field :email, placeholder: "Your email address" %>
-  <%= f.label :subject %>
-  <%= f.text_field :subject, placeholder: "Nature of enquiry" %>
-  <%= f.label :detail %>
-  <%= f.text_area :detail, rows: 10, placeholder: "Please enter a detailed description" %>
+
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name, placeholder: "Your name" %>
+  </p>
+
+  <p>
+    <%= f.label :email %>
+    <%= f.text_field :email, placeholder: "Your email address" %>
+  </p>
+
+  <p>
+    <%= f.label :department_id %>
+    <%= f.select(:department_id, @departments.collect { |d| [d.name, d.id] }, { prompt: '-select-' }) %>
+  </p>
+
+  <p>
+    <%= f.label :subject %>
+    <%= f.text_field :subject, placeholder: "Nature of enquiry" %>
+  </p>
+
+  <p>
+    <%= f.label :detail %>
+    <%= f.text_area :detail, rows: 10, placeholder: "Please enter a detailed description" %>
+  </p>
 
   <%= f.submit %>
 <% end %>
