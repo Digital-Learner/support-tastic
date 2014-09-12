@@ -23,3 +23,24 @@ gem 'capistrano-rails', group: :development
 
 gem 'debugger', group: [:development, :test]
 
+gem 'thin'
+
+group :development do
+  gem 'guard-cucumber'
+  gem 'guard-rspec', require: false
+end
+
+group :test, :development do
+  gem 'rspec-rails'
+  gem 'gmail', git: 'https://github.com/90seconds/gmail.git'
+end
+
+group :test do
+  gem 'factory_girl_rails', '~> 4.2.1'
+  gem 'cucumber-rails', require: false
+  gem 'database_cleaner'
+  gem 'capybara-webkit'
+  gem 'launchy'
+  gem 'email_spec'
+  gem 'quiet_assets', group: :development
+end
