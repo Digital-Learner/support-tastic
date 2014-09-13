@@ -19,3 +19,11 @@ end
 Then(/^they should see "(.*?)"$/) do |arg1|
   expect(page).to have_content(arg1)
 end
+
+When(/^they submit an incomplete form or form with invalid information$/) do
+  click_button "Create Ticket"
+end
+
+Then(/^an error message should be presented$/) do
+  expect(page).to have_selector('#error_explanation')
+end

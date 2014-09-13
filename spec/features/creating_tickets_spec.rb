@@ -17,4 +17,10 @@ describe "Creating Tickets" do
 
     expect(page).to have_content "A new Ticket has been created."
   end
+
+  scenario "cannot create a ticket without valid attributes" do
+    click_button "Create Ticket"
+
+    expect(page).to have_content "Unable to create Ticket."
+  end
 end
