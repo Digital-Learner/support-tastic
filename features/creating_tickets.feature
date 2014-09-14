@@ -14,6 +14,7 @@ Background:
 Scenario: a customer creates a valid ticket
   When they complete the form with valid information
   Then they should see "A new Ticket has been created."
+  And they should receive an email with a link to ticket
 
 Scenario: a customer creates a ticket without valid attributes
   When they submit an incomplete form or form with invalid information

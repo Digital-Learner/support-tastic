@@ -27,3 +27,12 @@ end
 Then(/^an error message should be presented$/) do
   expect(page).to have_selector('#error_explanation')
 end
+
+Then(/^they should receive an email with a link to ticket$/) do
+  steps(
+        %Q(
+          When they open the email
+          Then they should see "Ticket Reference: #{@ticket.reference_id} - #{@ticket.subject}" in the email subject
+        )
+      )
+end
