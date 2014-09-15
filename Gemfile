@@ -11,6 +11,7 @@ gem 'coffee-rails', '~> 4.0.0'
 # gem 'therubyracer',  platforms: :ruby
 
 gem 'foundation-rails'
+gem 'foundation_rails_helper'
 
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'

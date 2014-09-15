@@ -1,16 +1,23 @@
 <div id='ticket'>
-  <h2>Your reference: <%= @ticket.reference_id %></h2>
-  <h3>Subject: <%= @ticket.subject %></h3>
+  <div class='row'>
+    <div class='small-8 columns'>
+      <h3>Subject: <%= @ticket.subject %></h3>
+    </div>
 
-  <span id='author'>Created by <%= @ticket.name %> < <%= @ticket.email %> ></span>
-  <h5>Created on: <%= @ticket.created_at %></h5>
-  <% unless @ticket.updated_at == @ticket.created_at %>
-    <h5>Last updated: <%= @ticket.updated_at %></h5>
-  <% end %>
+    <div class='small-4 columns'>
+      Your reference: <span class='right label'><%= @ticket.reference_id %></span>
+      Creator: <span class='right label secondary' id='author-id'><%= @ticket.name %> < <%= @ticket.email %> ></span>
+      Created: <span class='right label secondary'><%= @ticket.created_at %></span><br/>
+      <% unless @ticket.updated_at == @ticket.created_at %>
+        Last updated: <span class='clearfix right label secondary'><%= @ticket.updated_at %></span>
+      <% end %>
+      Department: <span class='right'><%= @ticket.department.name %></span>
+    </div>
+  </div>
+  <hr></hr>
 
-  <h4>Department: <span><%= @ticket.department.name %></span></h4>
-  <h4>Detail:</h4>
+
+  <h4>Ticket Detail:</h4>
   <%= simple_format(@ticket.detail) %>
-
 </div>
 
