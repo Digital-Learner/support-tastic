@@ -1,0 +1,16 @@
+<div id='ticket'>
+  <h2>Your reference: <%= @ticket.reference_id %></h2>
+  <h3>Subject: <%= @ticket.subject %></h3>
+
+  <span id='author'>Created by <%= @ticket.name %> < <%= @ticket.email %> ></span>
+  <h5>Created on: <%= @ticket.created_at %></h5>
+  <% unless @ticket.updated_at == @ticket.created_at %>
+    <h5>Last updated: <%= @ticket.updated_at %></h5>
+  <% end %>
+
+  <h4>Department: <span><%= @ticket.department.name %></span></h4>
+  <h4>Detail:</h4>
+  <%= simple_format(@ticket.detail) %>
+
+</div>
+

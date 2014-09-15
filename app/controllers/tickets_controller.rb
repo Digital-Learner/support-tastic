@@ -10,6 +10,7 @@ class TicketsController < ApplicationController
   def create
     @ticket = Ticket.new(ticket_params)
     if @ticket.save
+      TicketMailer.creation_email(@ticket).deliver
       flash[:notice] = "A new Ticket has been created."
       redirect_to tickets_path
     else
@@ -17,6 +18,10 @@ class TicketsController < ApplicationController
       flash[:alert] = "Unable to create Ticket."
       render "new"
     end
+  end
+
+  def show
+    @ticket = Ticket.find_by(reference_id: params[:id])
   end
 
   private
