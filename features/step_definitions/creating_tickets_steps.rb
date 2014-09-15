@@ -44,6 +44,7 @@ Then(/^they should receive an email with a link to ticket$/) do
           And they click the first link in the email
 
           Then they should see "Subject: #{@subject}" within "#ticket h3"
+          And they should see "Waiting for Staff Response" within "#ticket #current-status"
         )
       )
 end

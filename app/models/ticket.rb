@@ -1,5 +1,6 @@
 class Ticket < ActiveRecord::Base
   belongs_to :department
+  belongs_to :state
 
   before_save :downcase_email!
   before_save :generate_reference_id

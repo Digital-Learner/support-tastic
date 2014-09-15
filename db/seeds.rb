@@ -21,3 +21,5 @@ unless User.find_by(email: 'david@example.com')
               password_confirmation: 'staff-password'
              )
 end
+
+State.create(name: 'Waiting for Staff Response') unless State.find_by(name: 'Waiting for Staff Response')

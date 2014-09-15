@@ -14,6 +14,7 @@ RSpec.describe Ticket, :type => :model do
   it { should respond_to(:detail) }
   it { should respond_to(:department_id) }
   it { should respond_to(:reference_id) }
+  it { should respond_to(:state_id) }
 
   it { should be_valid }
 
@@ -117,6 +118,10 @@ RSpec.describe Ticket, :type => :model do
     expect(subject._reflections[:department].macro).to eq :belongs_to
   end
 
+  it "should belong to state" do
+    expect(subject._reflections[:state].macro).to eq :belongs_to
+  end
+
   describe "reference_id" do
 
     it "is 'nil' on instantiation" do
@@ -135,6 +140,14 @@ RSpec.describe Ticket, :type => :model do
       expect(ref_parts.length).to eql(5)
       expect([ref_parts[0], ref_parts[2], ref_parts[4]].map {|e| e.match (/[A-Z]{3}/) }.compact.length).to eq 3
       expect([ref_parts[1], ref_parts[3]].map {|e| e.match (/\d{3}/) }.compact.length).to eq 2
+    end
+  end
+
+  describe "state_id" do
+    it "is assigned default value 'Waiting for Staff Response' on save" do
+      state = State.find_by(name: 'Waiting for Staff Response')
+
+      expect(subject.state_id).to eql state.id
     end
   end
 end

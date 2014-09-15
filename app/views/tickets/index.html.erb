@@ -8,4 +8,39 @@
   </ul>
 </div>
 
+<dl class='tabs' data-tab>
+  <dd class='active'><a href="#panel-1">New Unassigned Tickets</a></dd>
+  <dd><a href="#panel-2">Open Tickets</a></dd>
+  <dd><a href="#panel-3">On-hold Tickets</a></dd>
+  <dd><a href="#panel-4">Closed Tickets</a></dd>
+</dl>
+<div class='tabs-content'>
+  <div class='content active' id='panel-1'>
+    <h2 class='label'>New unassigned tickets</h2>
+    <li>
+    </li>
+    <li>
+    </li>
+  </div>
+  <div class='content' id='panel-2'>
+    <h2>Open Tickets</h2>
+    <li>
+    </li>
+  </div>
+  <div class='content' id='panel-3'>
+    <h2>On-hold Tickets</h2>
+    <li>
+    </li>
+    <li>
+    </li>
+  </div>
+  <div class='content' id='panel-4'>
+    <h2>Closed Tickets</h2>
+    <li>
+    </li>
+    <li>
+    </li>
+  </div>
+</div>
+
 <%= link_to "New Ticket", new_ticket_path, class: 'button small round' %>

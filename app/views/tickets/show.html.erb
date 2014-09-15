@@ -2,6 +2,7 @@
   <div class='row'>
     <div class='small-8 columns'>
       <h3>Subject: <%= @ticket.subject %></h3>
+      <p class='label round large' id='current-status'>Status: <%= @ticket.state.name %></p>
     </div>
 
     <div class='small-4 columns'>
