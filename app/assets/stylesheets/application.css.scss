@@ -1,0 +1,54 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require foundation_and_overrides
+
+ */
+
+body {
+  background-image: image-url('IMAG0107.jpeg');
+  // background-image: image-url('Greenwich_waterfront.png');
+  background-repeat: no-repeat;
+  background-position: center center fixed;
+  background-size: cover;
+}
+
+.main {
+  background-color: floralwhite;
+  // border: 2px solid black;
+  opacity: 0.85;
+  padding: 10px;
+  border-radius: 15px;
+  // margin-bottom: 2.5rem;
+  // margin-bottom: 2.5rem;
+}
+
+.rails-flash {
+  margin-top: 0.95rem;
+  margin-bottom: 0.95rem;
+}
+
+.alert-empty {
+  // background-color: white;
+  min-height: 4.0rem;
+  margin-top: 0.95;
+  margin-bottom: 0.95rem;
+}
+
+footer {
+  background-color: #333;
+  width: 100%;
+  bottom: 0;
+  position: fixed;
+}

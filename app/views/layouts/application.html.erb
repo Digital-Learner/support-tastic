@@ -1,20 +1,31 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>SupportTastic</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <nav>
-    <li><%= link_to "Log in", login_path %></li>
-  </nav>
+    <title><%= content_for?(:title) ? yield(:title) : "Support-tastic" %></title>
 
-  <%= render 'shared/flash_messages' %>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
 
-  <%= yield %>
+  <body>
+    <header>
+      <%= render "layouts/navigation" %>
+    </header>
 
-</body>
+    <div class='row'>
+      <div class='small-11 large-12 columns'>
+        <%= render "shared/flash_messages" %>
+
+        <div class='main'>
+          <%= yield %>
+        </div>
+
+      </div>
+    </div>
+    <%= javascript_include_tag "application" %>
+  </body>
 </html>

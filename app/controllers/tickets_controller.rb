@@ -15,7 +15,7 @@ class TicketsController < ApplicationController
       redirect_to tickets_path
     else
       @departments = Department.all
-      flash[:alert] = "Unable to create Ticket."
+      flash.now[:alert] = "Unable to create Ticket."
       render "new"
     end
   end
