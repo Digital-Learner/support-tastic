@@ -1,3 +1,11 @@
 <h1>Tickets</h1>
 
+<div class='row'>
+  <ul id='all-tickets'>
+    <% @tickets.each do |t| %>
+      <li><%= link_to t.reference_id, ticket_path(t.reference_id) %></li>
+    <% end %>
+  </ul>
+</div>
+
 <%= link_to "New Ticket", new_ticket_path, class: 'button small round' %>
