@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:login][:password])
       session[:user_id] = user.id
       flash[:notice] = "Logged in successfully."
-      redirect_to root_url
+      redirect_to tickets_url
     else
       flash[:error] = "Cannot find that user and password"
       render :new
