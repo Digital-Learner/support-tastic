@@ -23,3 +23,9 @@ unless User.find_by(email: 'david@example.com')
 end
 
 State.create(name: 'Waiting for Staff Response') unless State.find_by(name: 'Waiting for Staff Response')
+State.create(name: 'Waiting for Customer') unless State.find_by(name: 'Waiting for Customer')
+State.create(name: 'On Hold')   unless State.find_by(name: 'On Hold')
+State.create(name: 'Cancelled') unless State.find_by(name: 'Cancelled')
+State.create(name: 'Completed') unless State.find_by(name: 'Completed')
+
+
