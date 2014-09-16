@@ -37,6 +37,10 @@ class Ticket < ActiveRecord::Base
 
   scope :closed, -> { cancelled + completed }
 
+  scope :open, -> { [] }
+
+  scope :unassigned, -> { waiting_staff_response }
+
   private
     def downcase_email!
       self.email.downcase!

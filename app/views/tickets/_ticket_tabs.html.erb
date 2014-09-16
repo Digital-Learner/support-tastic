@@ -1,8 +1,8 @@
 <dl class='tabs' data-tab>
-  <dd class='active'><a href="#panel-1">New Unassigned Tickets</a></dd>
-  <dd><a href="#panel-2">Open Tickets</a></dd>
-  <dd><a href="#panel-3">On-hold Tickets</a></dd>
-  <dd><a href="#panel-4">Closed Tickets</a></dd>
+  <dd class='active'><a href="#panel-1">New Unassigned Tickets <%= count_unassigned %></a></dd>
+  <dd><a href="#panel-2">Open Tickets <%= count_open %></a></dd>
+  <dd><a href="#panel-3">On-hold Tickets <%= count_on_hold %></a></dd>
+  <dd><a href="#panel-4">Closed Tickets <%= count_closed %></a></dd>
 </dl>
 <div class='tabs-content'>
   <%= render 'new_unassigned' %>
