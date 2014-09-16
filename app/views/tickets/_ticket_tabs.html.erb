@@ -1,0 +1,12 @@
+<dl class='tabs' data-tab>
+  <dd class='active'><a href="#panel-1">New Unassigned Tickets</a></dd>
+  <dd><a href="#panel-2">Open Tickets</a></dd>
+  <dd><a href="#panel-3">On-hold Tickets</a></dd>
+  <dd><a href="#panel-4">Closed Tickets</a></dd>
+</dl>
+<div class='tabs-content'>
+  <%= render 'new_unassigned' %>
+  <%= render 'open' %>
+  <%= render 'on_hold' %>
+  <%= render 'closed' %>
+</div>

@@ -35,6 +35,8 @@ class Ticket < ActiveRecord::Base
 
   scope :completed, -> { joins(:state).where(states: { name: 'Completed' }) }
 
+  scope :closed, -> { cancelled + completed }
+
   private
     def downcase_email!
       self.email.downcase!

@@ -1,0 +1,7 @@
+<div class='content' id='panel-2'>
+  <% @tickets.awaiting_customer.each do |t| %>
+    <li>
+      <%= link_to t.reference_id, ticket_path(t.reference_id) %>
+    </li>
+  <% end %>
+</div>

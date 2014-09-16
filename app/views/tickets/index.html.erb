@@ -1,42 +1,6 @@
 <h1>Tickets</h1>
 
-<dl class='tabs' data-tab>
-  <dd class='active'><a href="#panel-1">New Unassigned Tickets</a></dd>
-  <dd><a href="#panel-2">Open Tickets</a></dd>
-  <dd><a href="#panel-3">On-hold Tickets</a></dd>
-  <dd><a href="#panel-4">Closed Tickets</a></dd>
-</dl>
-<div class='tabs-content'>
-  <div class='content active' id='panel-1'>
-    <p>These are tickets not yet assigned to a staff member.</p>
-    <% @tickets.waiting_staff_response.each do |t| %>
-      <li>
-        <%= link_to t.reference_id, ticket_path(t.reference_id) %>
-      </li>
-    <% end %>
-  </div>
-  <div class='content' id='panel-2'>
-    <% @tickets.awaiting_customer.each do |t| %>
-      <li>
-        <%= link_to t.reference_id, ticket_path(t.reference_id) %>
-      </li>
-    <% end %>
-  </div>
-  <div class='content' id='panel-3'>
-    <% @tickets.on_hold.each do |t| %>
-      <li>
-        <%= link_to t.reference_id, ticket_path(t.reference_id) %>
-      </li>
-    <% end %>
-  </div>
-  <div class='content' id='panel-4'>
-    <% ( @tickets.completed + @tickets.cancelled ).each do |t| %>
-      <li>
-        <%= link_to t.reference_id, ticket_path(t.reference_id) %>
-      </li>
-    <% end %>
-  </div>
-</div>
+<%= render 'ticket_tabs' %>
 
 <%= link_to "New Ticket", new_ticket_path, class: 'button small round' %>
 
