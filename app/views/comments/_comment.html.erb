@@ -1,0 +1,5 @@
+<hr>
+<%= div_for(comment) do %>
+  <span><%= comment.user_id %></span>
+  <%= simple_format(comment.comment) %>
+<% end %>

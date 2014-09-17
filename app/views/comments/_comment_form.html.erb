@@ -1,0 +1,5 @@
+<%= form_for [@ticket, @comment], url: ticket_comments_path(@ticket.reference_id) do |f| %>
+  <%= f.text_area :comment, label: "Add comment", cols: 40, rows: 8  %>
+
+  <%= f.submit class: 'button small round' %>
+<% end %>

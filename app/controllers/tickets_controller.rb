@@ -23,6 +23,7 @@ class TicketsController < ApplicationController
 
   def show
     @ticket = Ticket.find_by(reference_id: params[:id])
+    @comment = @ticket.comments.build
   end
 
   private

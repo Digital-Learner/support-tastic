@@ -2,6 +2,8 @@ class Ticket < ActiveRecord::Base
   belongs_to :department
   belongs_to :state
 
+  has_many :comments
+
   before_save :downcase_email!
   before_save :generate_reference_id, if: "self.reference_id.nil?"
 

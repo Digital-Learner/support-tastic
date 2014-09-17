@@ -15,10 +15,24 @@
       Department: <span class='right'><%= @ticket.department.name %></span>
     </div>
   </div>
-  <hr></hr>
-
+  <hr>
 
   <h4>Ticket Detail:</h4>
   <%= simple_format(@ticket.detail) %>
+
+  <hr>
+  <div class='row' id='comments'>
+    <div class='small-8 large-12 columns'>
+      <h4>Activity Stream:</h4>
+      <% if @ticket.comments.exists? %>
+        <%= render @ticket.comments.select(&:persisted?) %>
+      <% else %>
+        No comments exist for this ticket
+      <% end %>
+    </div>
+    <div class='small-8 large-12 columns'>
+      <%= render 'comments/comment_form' %>
+    </div>
+  </div>
 </div>
 
