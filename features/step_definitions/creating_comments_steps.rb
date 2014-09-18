@@ -34,3 +34,20 @@ Then(/^I should see the comment on the ticket$/) do
         )
       )
 end
+
+Given(/^I add invalid details to the comments form$/) do
+  click_button "Create Comment"
+end
+
+Then(/^I should not see the comment on the ticket$/) do
+  within('#comments') do
+    expect(page).to_not have_css('div.comment')
+  end
+end
+
+Then(/^I should be shown the error$/) do
+  within('#new_comment') do
+    expect(page).to have_css('label.error', text: 'Add comment')
+    expect(page).to have_css('small.input-text.error', text: "can't be blank")
+  end
+end

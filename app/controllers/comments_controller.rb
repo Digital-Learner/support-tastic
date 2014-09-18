@@ -6,6 +6,9 @@ class CommentsController < ApplicationController
     if @comment.save
       flash[:notice] = "Comment recorded and ticket updated."
       redirect_to ticket_path(@ticket.reference_id)
+    else
+      flash[:alert] = "Failed to add comment."
+      render template: "tickets/show"
     end
   end
 

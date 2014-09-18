@@ -10,3 +10,9 @@ Scenario: Staff member adds comment
   Given I am able to add comments to the ticket
   And I add valid details to the comments form
   Then I should see the comment on the ticket
+
+Scenario: Creating an invalid comment
+  Given I am able to add comments to the ticket
+  And I add invalid details to the comments form
+  Then I should not see the comment on the ticket
+  And I should be shown the error
